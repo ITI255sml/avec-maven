@@ -33,12 +33,15 @@ public class CallRestWebService {
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(endpoint);
 		String ip = "not found";
+		
 		try {
 			HttpResponse response = client.execute(request);
 			String jsonResponse = EntityUtils.toString(response.getEntity());
 			System.out.println("Response as String : " + jsonResponse);
 			JSONObject responseObj = new JSONObject(jsonResponse);
 
+
+//test git cmmit
 			//ip = responseObj.getString("origin");
 			ip = responseObj.getString("query");
 			System.out.println("ip : " + ip); 
